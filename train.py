@@ -59,7 +59,6 @@ def train(model, criterion, optimizer, train_loader, valid_loader, epochs, use_c
     for e in range(epochs):
         running_loss = 0
         model.train()
-        print("STARTED")
         for inputs, labels in train_loader:
             steps += 1
             optimizer.zero_grad()
