@@ -19,7 +19,7 @@ def create_arguments():
     parser.add_argument('--gpu', action="store_true", default=True)
     parser.add_argument('--arch', dest='arch', default='densenet201', choices=archs,
                         help='choose the desired model architecture')
-    parser.add_argument('--hidden_units', dest='hidden_units', default=[1024, 512], nargs='+',
+    parser.add_argument('--hidden_units', dest='hidden_units', default= 512, nargs='+',
                         help='choose the desired hidden layer architecture')
     parser.add_argument('--learning_rate', dest='learning_rate', default='0.01',
                         help='choose the desired learning rate')
@@ -146,7 +146,7 @@ def construct_model():
     print(model)
     train(model, criterion, optimizer, train_loader, valid_loader, epochs, use_cuda)
     model.class_to_idx = train_dataset.class_to_idx
-    save_model(model, args, classifier)
+    save_model(args, classifier)
 
 
 if __name__ == "__main__":

@@ -25,6 +25,8 @@ def predict(image_path, model, topk, use_cuda):
     model.eval()
     
     image = process_image(image_path)
+    image = torch.from_numpy(image)
+    image = image.type(torch.FloatTensor).unsqueeze(0)
     if use_cuda:
         image = image.cuda()
     image = image.unsqueeze(0)
