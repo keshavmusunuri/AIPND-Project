@@ -23,7 +23,7 @@ def create_arguments():
                         help='choose the desired hidden layer architecture')
     parser.add_argument('--learning_rate', dest='learning_rate', default='0.01',
                         help='choose the desired learning rate')
-    parser.add_argument('--epochs', dest='epochs', default='10', type=int, help='choose the desired number of epochs')
+    parser.add_argument('--epochs', dest='epochs', default=10, type=int, help='choose the desired number of epochs')
     parser.add_argument('--save_dir', action='store', help='Directory to save checkpoints')
 
     return parser.parse_args()
