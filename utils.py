@@ -9,7 +9,7 @@ def save_model(model, args, classifier):
     checkpoint = {'arch': args.arch, 
                   'model': model,
                   'learning_rate': args.learning_rate,
-                  'hidden_sizes': args.hidden_sizes,
+                  'hidden_units': args.hidden_units,
                   'classifier' : classifier,
                   'epochs': args.epochs,
                   'state_dict': model.state_dict(),
